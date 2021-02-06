@@ -1,0 +1,110 @@
+:root {
+  --color-white-background: #ffffff;
+  --color-background: #ebebeb;
+  --color-primary-light: #a1dfe7;
+  --color-primary-medium: #42becf; /*Blue from ICMC Jr*/
+  --color-primary-dark: #2d828d;
+  --color-secondary-light: #fadc7a;
+  --color-secondary-medium: #f9d14e; /*Yellow from ICMC-jr*/
+  --color-secondary-dark: #e2be47;
+
+  --color-green: #04d361;
+  --color-green-lighter: #82e9b0;
+  --color-another-green: #24ef7f;
+  --color-red: #e33d3d;
+  --color-red-lighter: #f19e9e;
+
+  --color-text-title: #000000;
+  --color-text-complement: #9b9b9b;
+  --color-text-base-lighter: #c4c4c4;
+  --color-text-base: #777777;
+  --color-text-inputs: #101011;
+
+  --color-line-in-white: #e6e6f0;
+  --color-hover: #ebebf5;
+  --color-input-background: #ebebeb;
+  --color-button-text: #ffffff;
+  --color-box-base: #ffffff;
+  --color-box-footer: #fafafc;
+  --color-small-info: #c1bccc;
+
+  --text-small: 16px;
+  --text-medium: 18px;
+  --text-big: 24px;
+  --text-bigger: 36px;
+  --text-thicc: 48px;
+  --text-extra-thicc: 56px;
+  --text-titan: 144px;
+}
+
+body {
+  color: var(--color-text-title);
+  background: var(--color-input-background);
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+body,
+input,
+button,
+textarea {
+  font: 400 18px "Poppins", sans-serif;
+}
+
+button:focus {
+  outline: none !important;
+}
+
+/*Global Attributes*/
+.document-container {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.app-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  border: 1px solid black;
+}
+
+.header-container {
+  /*Sticky*/
+  top: 0;
+  position: fixed;
+  width: 100vw;
+  padding: 1rem;
+
+  color: var(--color-box-base);
+  background-color: var(--color-primary-dark);
+}
+
+.body-container {
+  background-color: var(--color-secondary-dark);
+}
+
+.footer-container {
+  /*
+    fixed footer on bottom
+  */
+  position: fixed;
+  left: 0;
+  bottom: 0;
+
+  width: 100vw;
+  background-color: var(--color-text-base);
+  color: var(--color-box-base);
+  text-align: center;
+}

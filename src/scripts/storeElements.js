@@ -9,36 +9,25 @@ var storeElements = {
   createApp: function () {
     // document contains the app
     document.getElementById("app").appendChild(this.app);
-
-    // container
-    this.app.style.postion = "absolute";
-    this.app.style.height = "100%";
-    this.app.style.width = "100%";
-    this.app.style.border = "1px solid black";
+    this.app.className = "app-container";
   },
 
   createHeader: function () {
-    // header
     this.header.innerHTML = "Ich bin ein Header";
-    this.header.style.height = "50px";
-    this.header.style.border = "1px solid blue";
+    this.header.className = "header-container";
     this.app.appendChild(this.header);
   },
 
   createBody: function () {
-    // body
     this.body.innerHTML = "Eu sou body";
-    this.body.style.border = " 1px solid green";
-
-    // this.allCards.style.border = "1px solid green";
-
+    this.body.className = "body-container";
     this.app.appendChild(this.body);
   },
 
   createFooter: function () {
     // footer
     this.footer.innerHTML = "Eu sou footer";
-    this.footer.style.border = " 1px solid purple";
+    this.body.className = "footer-container";
     this.app.appendChild(this.footer);
   },
 
