@@ -1,4 +1,5 @@
 :root {
+  /*Basic Pallete*/
   --color-white-background: #ffffff;
   --color-background: #ebebeb;
   --color-primary-light: #a1dfe7;
@@ -8,12 +9,14 @@
   --color-secondary-medium: #f9d14e; /*Yellow from ICMC-jr*/
   --color-secondary-dark: #e2be47;
 
+  /*Element Pallet*/
   --color-green: #04d361;
   --color-green-lighter: #82e9b0;
   --color-another-green: #24ef7f;
   --color-red: #e33d3d;
   --color-red-lighter: #f19e9e;
 
+  /*Text Pallete*/
   --color-text-title: #000000;
   --color-text-complement: #9b9b9b;
   --color-text-base-lighter: #c4c4c4;
@@ -76,8 +79,9 @@ button:focus {
 .app-container {
   height: 100vh;
   width: 100vw;
+
   display: flex;
-  border: 1px solid black;
+  position: absolute;
 }
 
 .header-container {
@@ -92,19 +96,21 @@ button:focus {
 }
 
 .body-container {
+  height: 60%;
+  width: 100vw;
+
+  color: var(--color-box-base);
   background-color: var(--color-secondary-dark);
 }
 
 .footer-container {
-  /*
-    fixed footer on bottom
-  */
-  position: fixed;
-  left: 0;
+  /*fixed footer on bottom*/
   bottom: 0;
-
+  position: absolute;
   width: 100vw;
+  padding: 0.5rem;
+  height: 2rem;
+
   background-color: var(--color-text-base);
   color: var(--color-box-base);
-  text-align: center;
 }

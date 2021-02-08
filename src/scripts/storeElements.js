@@ -13,19 +13,18 @@ var storeElements = {
   },
 
   createHeader: function () {
-    this.header.innerHTML = "Ich bin ein Header";
+    this.header.innerHTML = "Super Trunfo: Scientist";
     this.header.className = "header-container";
     this.app.appendChild(this.header);
   },
 
   createBody: function () {
-    this.body.innerHTML = "Eu sou body";
+    this.body.innerHTML = "Eu sou body, ola";
     this.body.className = "body-container";
     this.app.appendChild(this.body);
   },
 
   createFooter: function () {
-    // footer
     this.footer.innerHTML = "Eu sou footer";
     this.body.className = "footer-container";
     this.app.appendChild(this.footer);
