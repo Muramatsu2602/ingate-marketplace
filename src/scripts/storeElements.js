@@ -18,18 +18,20 @@ var storeElements = {
     this.header.innerHTML = "Super Trunfo: Scientist";
     this.header.className = "header-container";
     this.app.appendChild(this.header);
+
+    //
+    this.searchInput.onkeyup = function (e) {
+      console.log("keyup", e.target.value);
+      App.store.state.search = e.target.value;
+    };
+    this.searchContainer.appendChild(this.searchInput);
+    this.header.appendChild(this.searchContainer);
   },
 
   createBody: function () {
     this.body.innerHTML = "Eu sou body, ola";
     this.body.className = "body-container";
     this.app.appendChild(this.body);
-
-    this.searchInput.onkeyup = function (e) {
-      console.log("keyup", e.target.value);
-    };
-    this.searchContainer.appendChild(this.searchInput);
-    this.body.appendChild(this.searchContainer);
 
     this.allCardsContainer.className = "all-cards-container";
     this.body.appendChild(this.allCardsContainer);

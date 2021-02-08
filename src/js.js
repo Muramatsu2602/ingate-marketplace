@@ -22,9 +22,8 @@ var App = {
   },
   store: {
     state: {
-      isDropdownOpen: false,
+      cards: storeCards,
     },
-    cards: storeCards,
   },
   controllers: storeControllers,
   elements: storeElements,
