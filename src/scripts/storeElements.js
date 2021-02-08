@@ -5,6 +5,8 @@ var storeElements = {
   footer: document.createElement("div"),
   allCardsContainer: document.createElement("div"),
   cards: {},
+  searchContainer: document.createElement("div"),
+  searchInput: document.createElement("input"),
 
   createApp: function () {
     // document contains the app
@@ -22,6 +24,15 @@ var storeElements = {
     this.body.innerHTML = "Eu sou body, ola";
     this.body.className = "body-container";
     this.app.appendChild(this.body);
+
+    this.searchInput.onkeyup = function (e) {
+      console.log("keyup", e.target.value);
+    };
+    this.searchContainer.appendChild(this.searchInput);
+    this.body.appendChild(this.searchContainer);
+
+    this.allCardsContainer.className = "all-cards-container";
+    this.body.appendChild(this.allCardsContainer);
   },
 
   createFooter: function () {

@@ -102,6 +102,11 @@ button:focus {
   color: var(--color-box-base);
   background-color: var(--color-secondary-dark);
 }
+.all-cards-container {
+  /* border: 1px solid green; */
+  display: flex;
+  flex-wrap: wrap;
+}
 
 .footer-container {
   /*fixed footer on bottom*/
@@ -109,7 +114,6 @@ button:focus {
   position: absolute;
   width: 100vw;
   padding: 0.5rem;
-  height: 2rem;
 
   background-color: var(--color-text-base);
   color: var(--color-box-base);
