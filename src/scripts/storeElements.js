@@ -15,7 +15,7 @@ var storeElements = {
   },
 
   createHeader: function () {
-    this.header.innerHTML = "Super Trunfo: Scientist";
+    this.header.innerHTML = "<h2>Super Trunfo: Scientist</h2>";
     this.header.className = "header-container";
     this.app.appendChild(this.header);
 

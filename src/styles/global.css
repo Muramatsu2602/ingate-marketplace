@@ -71,8 +71,9 @@ body::-webkit-scrollbar {
   color: var(--color-text-complement);
 }
 
-h3 {
-  margin-bottom: 0%;
+h3,
+h2 {
+  margin: 0%;
 }
 
 body,
@@ -127,11 +128,16 @@ button:focus {
   width: 100vw;
   padding: 5rem;
 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   color: var(--color-primary-dark);
   background-color: var(--color-background);
 }
 .all-cards-container {
-  /* border: 1px solid green; */
+  padding: 1rem;
+  justify-content: space-around;
   display: flex;
   flex-wrap: wrap;
 }
