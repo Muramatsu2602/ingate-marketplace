@@ -51,7 +51,7 @@ var storeElements = {
     this.createApp();
     this.createHeader();
     this.createBody();
-    this.createFooter();
+    // this.createFooter();
 
     console.log(App.store.cards);
     console.log("Elementos criados");

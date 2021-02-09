@@ -117,7 +117,6 @@ button:focus {
 }
 
 .body-container {
-  height: 30vh;
   width: 100vw;
 
   color: var(--color-box-base);
