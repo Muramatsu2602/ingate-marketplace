@@ -152,3 +152,9 @@ button:focus {
   background-color: var(--color-text-base);
   color: var(--color-box-base);
 }
+
+.error-message {
+  height: 100vh;
+  font-size: var(--text-big);
+  color: red;
+}

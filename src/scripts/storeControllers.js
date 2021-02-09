@@ -17,6 +17,8 @@ var storeControllers = {
     console.log("Let's render all the cards...", cards);
 
     // removing all old cards before rendering new ones
+    // removing error message when no search result was found
+    App.elements.allCardsContainer.innerHTML = null;
     this.removeAllCards();
 
     // iterating through all cards
@@ -78,6 +80,11 @@ var storeControllers = {
       console.log(el);
       App.elements.cards[card.id] = el;
       App.elements.allCardsContainer.appendChild(el);
+    }
+
+    // if search return 0 results
+    if (!App.elements.allCardsContainer.hasChildNodes()) {
+      App.elements.allCardsContainer.innerHTML = `<div class="error-message"><span >No results for '${search}'</span><div>  <hr>`;
     }
   },
 };
