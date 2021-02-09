@@ -50,6 +50,7 @@ var storeControllers = {
       btn.innerHTML = "Buy me!";
       btn.onclick = function (event) {
         // call modal to confirm purchase
+        // https://www.w3schools.com/howto/howto_css_delete_modal.asp
         alert("PURCHASE CONFIRMATION");
         console.log(event.target);
       };
