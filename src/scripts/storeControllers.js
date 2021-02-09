@@ -44,6 +44,10 @@ var storeControllers = {
       info.innerHTML = card.name + "<br>" + card.price;
       el.appendChild(info);
 
+      // confirmation modal called upon clicking the button
+      var modal = document.getElementById('id01');
+
+
       // car's 'buy me' button
       var btn = document.createElement("button");
       btn.className = "card-btn";
@@ -51,6 +55,9 @@ var storeControllers = {
       btn.onclick = function (event) {
         // call modal to confirm purchase
         // https://www.w3schools.com/howto/howto_css_delete_modal.asp
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
         alert("PURCHASE CONFIRMATION");
         console.log(event.target);
       };
