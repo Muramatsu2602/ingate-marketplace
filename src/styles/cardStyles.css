@@ -18,3 +18,20 @@
   width: 300px;
   border-radius: 8px;
 }
+
+.card-btn {
+  border-radius: 25px;
+  margin-top: 1rem;
+
+  font-weight: 500;
+  background-color: var(--color-primary-medium);
+  color: var(--color-box-base);
+  border: none;
+
+  cursor: pointer;
+  transition: background-color 0.2s !important;
+}
+
+.card-btn:hover {
+  background-color: var(--color-primary-light);
+}

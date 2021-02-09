@@ -44,6 +44,18 @@ var storeControllers = {
       info.innerHTML = card.name + "<br>" + card.price;
       el.appendChild(info);
 
+      // car's 'buy me' button
+      var btn = document.createElement("button");
+      btn.className = "card-btn";
+      btn.innerHTML = "Buy me!";
+      btn.onclick = function (event) {
+        // call modal to confirm purchase
+        alert("PURCHASE CONFIRMATION");
+        console.log(event.target);
+      };
+
+      el.appendChild(btn);
+
       console.log(el);
       App.elements.cards[card.id] = el;
       App.elements.allCardsContainer.appendChild(el);
