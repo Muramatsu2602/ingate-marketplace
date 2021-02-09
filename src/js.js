@@ -14,11 +14,11 @@ var App = {
 
     // basic settings
     document.body.className = "document-container";
-    
+
     this.elements.createElements();
     this.controllers.renderAllCards();
 
-    console.log("Fim do App");
+    console.log("Fim do APP");
   },
   store: {
     state: {

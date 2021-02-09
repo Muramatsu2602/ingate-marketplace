@@ -57,6 +57,18 @@ body::-webkit-scrollbar {
   display: none;
 }
 
+::-webkit-input-placeholder { /* Edge */
+  color: var(--color-text-complement);
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--color-text-complement);
+}
+
+::placeholder {
+  color: var(--color-text-complement);
+}
+
 body,
 input,
 button,

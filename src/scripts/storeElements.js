@@ -20,9 +20,11 @@ var storeElements = {
     this.app.appendChild(this.header);
 
     //
+    this.searchInput.placeholder = "pesquisar por nome...";
     this.searchInput.onkeyup = function (e) {
       console.log("keyup", e.target.value);
-      App.store.state.search = e.target.value;
+      App.store.state.search = e.target.value.toLowerCase();
+      App.controllers.renderAllCards();
     };
     this.searchContainer.appendChild(this.searchInput);
     this.header.appendChild(this.searchContainer);

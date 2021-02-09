@@ -25,7 +25,10 @@ var storeControllers = {
       // console.log(`CARD[${i}]: `, card);
 
       // filtrar caso tenha algo no state.search
-      console.log("Search:", card.name, search, card.name.search(search));
+      console.log("SEARCH:", card.name, search, card.name.search(search));
+      if (card.name.toLowerCase().search(search) === -1) {
+        continue;
+      }
 
       // creating card container
       var el = document.createElement("div");
