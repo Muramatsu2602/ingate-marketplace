@@ -31,7 +31,7 @@ var storeElements = {
   },
 
   createBody: function () {
-    this.body.innerHTML = "Eu sou body, ola";
+    this.body.innerHTML = "Welcome to our Store!";
     this.body.className = "body-container";
     this.app.appendChild(this.body);
 
@@ -40,8 +40,8 @@ var storeElements = {
   },
 
   createFooter: function () {
-    this.footer.innerHTML = "Eu sou footer";
-    this.body.className = "footer-container";
+    this.footer.innerHTML = '<p>Programmed with ♡ by @Muramatsu2602';
+    this.footer.className = "footer-container";
     this.app.appendChild(this.footer);
   },
 
@@ -51,7 +51,7 @@ var storeElements = {
     this.createApp();
     this.createHeader();
     this.createBody();
-    // this.createFooter();
+    this.createFooter();
 
     console.log(App.store.cards);
     console.log("Elementos criados");

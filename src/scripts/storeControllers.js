@@ -41,12 +41,21 @@ var storeControllers = {
 
       // card's info
       var info = document.createElement("div");
-      info.innerHTML = card.name + "<br>" + card.price;
+      info.innerHTML =
+        "<h3>" +
+        card.name +
+        "</h3>" +
+        "ATK: " +
+        +card.attack +
+        " DFE: " +
+        card.defence +
+        "<br>" +
+        "R$ " +
+        card.price;
       el.appendChild(info);
 
       // confirmation modal called upon clicking the button
-      var modal = document.getElementById('id01');
-
+      var modal = document.getElementById("id01");
 
       // car's 'buy me' button
       var btn = document.createElement("button");
