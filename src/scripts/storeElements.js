@@ -31,7 +31,7 @@ var storeElements = {
   },
 
   createBody: function () {
-    this.body.innerHTML = "Welcome to our Store!";
+    this.body.innerHTML = '<h2>Welcome to our Store!</h2>';
     this.body.className = "body-container";
     this.app.appendChild(this.body);
 
