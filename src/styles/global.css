@@ -81,6 +81,8 @@ input,
 button,
 textarea {
   font: 400 18px "Poppins", sans-serif;
+  outline: none;
+  border: none;
 }
 
 button:focus {
@@ -142,10 +144,18 @@ button:focus {
 }
 
 .header-container input {
-  border-radius: 25px;
-  width: 20rem;
-  outline: none;
   padding-right: 1rem;
+  width: 20rem;
+
+  border-radius: 25px;
+  border-width: 0px;
+  padding: 0.3rem;
+
+  transition: border 0.2s !important;
+}
+
+.header-container input:focus {
+  border-bottom: 3px dashed var(--color-primary-medium);
 }
 
 .body-container {
