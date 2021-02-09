@@ -23,6 +23,7 @@ var App = {
   store: {
     state: {
       cards: storeCards,
+      search: "",
     },
   },
   controllers: storeControllers,
