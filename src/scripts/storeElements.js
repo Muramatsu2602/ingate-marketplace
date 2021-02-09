@@ -19,9 +19,12 @@ var storeElements = {
     this.header.className = "header-container";
     this.app.appendChild(this.header);
 
+    // logo-container
+    this.logoContainer.className="logo-container";
+
     // img
     var img = document.createElement("img");
-    img.src = "img/website/scientist.svg";
+    img.src = "img/website/atom.svg";
     img.className = "header-logo";
     this.logoContainer.appendChild(img);
 

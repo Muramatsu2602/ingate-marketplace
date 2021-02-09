@@ -112,12 +112,22 @@ button:focus {
 
   display: flex;
   justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
 
   background-color: var(--color-primary-dark);
 }
 
-.header-logo{
-  height: 2rem;
+.logo-container {
+  display: flex;
+  flex-direction: row;
+  width: 30rem;
+
+  align-items: center;
+}
+
+.header-logo {
+  height: 3rem;
   margin-right: 0.5rem;
 }
 
