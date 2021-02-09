@@ -113,8 +113,22 @@ button:focus {
   display: flex;
   justify-content: space-around;
 
-  color: var(--color-box-base);
   background-color: var(--color-primary-dark);
+}
+
+.header-logo{
+  height: 2rem;
+  margin-right: 0.5rem;
+}
+
+.header-container a {
+  text-decoration: none;
+  color: var(--color-box-base);
+  font-size: var(--text-big);
+}
+
+.header-container a:hover {
+  text-decoration: underline;
 }
 
 .header-container input {

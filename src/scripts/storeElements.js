@@ -5,6 +5,7 @@ var storeElements = {
   footer: document.createElement("div"),
   allCardsContainer: document.createElement("div"),
   cards: {},
+  logoContainer: document.createElement("div"),
   searchContainer: document.createElement("div"),
   searchInput: document.createElement("input"),
 
@@ -15,23 +16,37 @@ var storeElements = {
   },
 
   createHeader: function () {
-    this.header.innerHTML = "<h2>Super Trunfo: Scientist</h2>";
     this.header.className = "header-container";
     this.app.appendChild(this.header);
 
-    //
+    // img
+    var img = document.createElement("img");
+    img.src = "img/website/scientist.svg";
+    img.className = "header-logo";
+    this.logoContainer.appendChild(img);
+
+    // Title
+    var title = document.createElement("a");
+    title.href = "";
+    title.innerHTML = "Super Trunfo: Scientist";
+    this.logoContainer.appendChild(title);
+
+    // searchbar
     this.searchInput.placeholder = "pesquisar por nome...";
     this.searchInput.onkeyup = function (e) {
       console.log("keyup", e.target.value);
       App.store.state.search = e.target.value.toLowerCase();
       App.controllers.renderAllCards();
     };
+
+    // adding children to header-container
     this.searchContainer.appendChild(this.searchInput);
+    this.header.appendChild(this.logoContainer);
     this.header.appendChild(this.searchContainer);
   },
 
   createBody: function () {
-    this.body.innerHTML = '<h2>Welcome to our Store!</h2>';
+    this.body.innerHTML = "<h2>Welcome to our Store!</h2>";
     this.body.className = "body-container";
     this.app.appendChild(this.body);
 
@@ -40,7 +55,7 @@ var storeElements = {
   },
 
   createFooter: function () {
-    this.footer.innerHTML = '<p>Programmed with ♡ by @Muramatsu2602';
+    this.footer.innerHTML = "<p>Programmed with ♡ by @Muramatsu2602";
     this.footer.className = "footer-container";
     this.app.appendChild(this.footer);
   },
