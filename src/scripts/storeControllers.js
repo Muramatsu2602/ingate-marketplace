@@ -49,6 +49,8 @@ var storeControllers = {
         +card.attack +
         " DFE: " +
         card.defence +
+        " HP: " +
+        card.life +
         "<br>" +
         "R$ " +
         card.price;

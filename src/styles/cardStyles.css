@@ -12,6 +12,12 @@
   color: var(--color-text-title);
   border: 2px solid var(--color-primary-dark);
   font-weight: 500;
+
+  transition: border 0.2s !important;
+}
+
+.card-container:hover {
+  border-color: var(--color-red);
 }
 
 .card-container h3 {

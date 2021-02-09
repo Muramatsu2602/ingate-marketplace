@@ -54,4 +54,22 @@ var storeCards = [
       price: 98.33,
       url: "img/cards/galileoGalilei.jpg",
     },
+    {
+      id: 6,
+      name: "Alan Turing",
+      life: "41",
+      attack: "55",
+      defence: "30",
+      price: 98.33,
+      url: "img/cards/alanTuring.jpg",
+    },
+    {
+      id: 7,
+      name: "Noam Chomsky",
+      life: "92",
+      attack: "87",
+      defence: "21",
+      price: 1987.33,
+      url: "img/cards/noamChomsky.jpg",
+    },
 ]
