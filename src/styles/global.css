@@ -158,6 +158,18 @@ button:focus {
   border-bottom: 3px dashed var(--color-primary-medium);
 }
 
+.inventory-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.inventory-container img{
+  height: 2rem;
+}
+
+
+
 .body-container {
   width: 100vw;
   padding: 5rem;

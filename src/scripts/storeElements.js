@@ -8,6 +8,7 @@ var storeElements = {
   logoContainer: document.createElement("div"),
   searchContainer: document.createElement("div"),
   searchInput: document.createElement("input"),
+  inventoryContainer: document.createElement("div"),
 
   createApp: function () {
     // document contains the app
@@ -20,13 +21,19 @@ var storeElements = {
     this.app.appendChild(this.header);
 
     // logo-container
-    this.logoContainer.className="logo-container";
+    this.logoContainer.className = "logo-container";
 
     // img
     var img = document.createElement("img");
     img.src = "img/website/atom.svg";
     img.className = "header-logo";
     this.logoContainer.appendChild(img);
+
+    // Inventory button
+    this.inventoryContainer.className = "inventory-container";
+    var treasureImg = document.createElement("img");
+    img.src = "img/website/treasure.svg";
+    this.inventoryContainer.appendChild(img);
 
     // Title
     var title = document.createElement("a");
@@ -45,6 +52,7 @@ var storeElements = {
     // adding children to header-container
     this.searchContainer.appendChild(this.searchInput);
     this.header.appendChild(this.logoContainer);
+    this.header.appendChild(this.inventoryContainer);
     this.header.appendChild(this.searchContainer);
   },
 

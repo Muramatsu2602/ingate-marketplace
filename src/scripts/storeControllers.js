@@ -90,7 +90,6 @@ var storeControllers = {
         //   modal.style.display = "none";
         // }
         this.removeSoldCard(card.id);
-        location.reload();
 
         alert("PURCHASE CONFIRMATION");
         console.log(event.target);
