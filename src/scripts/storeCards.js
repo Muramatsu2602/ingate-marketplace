@@ -71,4 +71,13 @@ var storeCards = [
     price: 1987.33,
     url: "img/cards/noamChomsky.jpg",
   },
+  {
+    id: 9,
+    name: "Richard Feynman",
+    life: "70",
+    attack: "100",
+    defence: "18",
+    price: 93.33,
+    url: "img/cards/richardFeynman.png",
+  },
 ];

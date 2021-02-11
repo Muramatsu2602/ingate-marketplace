@@ -5,7 +5,7 @@
 
   padding: 1rem;
   width: 350px;
-  margin: 5px;
+  margin: 1rem;
   border-radius: 8px;
 
   background-color: var(--color-white-background);
@@ -27,6 +27,7 @@
 .card-container img {
   height: 300px;
   width: 300px;
+  object-fit: fill;
   border-radius: 8px;
 }
 
