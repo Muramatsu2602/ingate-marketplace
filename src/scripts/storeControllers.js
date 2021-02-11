@@ -1,4 +1,7 @@
 var storeControllers = {
+  /**
+   * removing cards from store page
+   */
   removeAllCards: function () {
     var els = App.elements.cards;
     var keys = Object.keys(els);
@@ -11,6 +14,21 @@ var storeControllers = {
 
     App.elements.cards = {};
   },
+
+  /**
+   * deleting a card from shop pagea card after buying it
+   */
+  removeSoldCard: function (id) {
+    const index = id - 1;
+    // id starts at 1 and arrays... at 0
+    var el = App.elements.cards[index];
+    el.remove();
+    App.elements.cards[index] = {};
+  },
+
+  /**
+   * read all cards from storeCards.js
+   */
   renderAllCards: function () {
     var search = App.store.state.search;
     var cards = App.store.state.cards;
@@ -68,9 +86,12 @@ var storeControllers = {
       btn.onclick = function (event) {
         // call modal to confirm purchase
         // https://www.w3schools.com/howto/howto_css_delete_modal.asp
-        if (event.target == modal) {
-          modal.style.display = "none";
-        }
+        // if (event.target == modal) {
+        //   modal.style.display = "none";
+        // }
+        this.removeSoldCard(card.id);
+        location.reload();
+
         alert("PURCHASE CONFIRMATION");
         console.log(event.target);
       };
