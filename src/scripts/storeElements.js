@@ -4,7 +4,9 @@ var storeElements = {
   body: document.createElement("div"),
   footer: document.createElement("div"),
   allCardsContainer: document.createElement("div"),
+  myCardsContainer: document.createElement("div"),
   cards: {},
+  myCards: {},
   logoContainer: document.createElement("div"),
   searchContainer: document.createElement("div"),
   searchInput: document.createElement("input"),
@@ -60,6 +62,9 @@ var storeElements = {
     this.body.innerHTML = "<h2>Welcome to our Store!</h2>";
     this.body.className = "body-container";
     this.app.appendChild(this.body);
+
+    this.myCardsContainer.className = "my-cards-container";
+    this.body.appendChild(this.myCardsContainer);
 
     this.allCardsContainer.className = "all-cards-container";
     this.body.appendChild(this.allCardsContainer);

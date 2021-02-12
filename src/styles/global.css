@@ -189,6 +189,14 @@ button:focus {
   flex-wrap: wrap;
 }
 
+.my-cards-container{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  background-color: var(--color-primary-light);
+}
+
 .footer-container {
   /*fixed footer on bottom*/
   bottom: 0;
