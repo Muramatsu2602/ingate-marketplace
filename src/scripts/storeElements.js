@@ -34,8 +34,8 @@ var storeElements = {
     // Inventory button
     this.inventoryContainer.className = "inventory-container";
     var treasureImg = document.createElement("img");
-    img.src = "img/website/treasure.svg";
-    this.inventoryContainer.appendChild(img);
+    treasureImg.src = "img/website/treasure.svg";
+    this.inventoryContainer.appendChild(treasureImg);
 
     // Title
     var title = document.createElement("a");

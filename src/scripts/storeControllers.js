@@ -199,6 +199,13 @@ var storeControllers = {
     if (!App.elements.allCardsContainer.hasChildNodes()) {
       App.elements.allCardsContainer.innerHTML = `<div class="error-message"><span >No results for '${search}'</span><div>  <hr>`;
     }
+
+    // if you added no cards  to inventory
+    // if (myCards.length === 0) {
+    //   var noCardsAlert = document.createElement("div");
+    //   noCardsAlert.innerHTML = "<span >No Cards on your inventory, mate</span>";
+    //   App.elements.myCardsContainer.appendChild(noCardsAlert);
+    // }
   },
 
   /**
