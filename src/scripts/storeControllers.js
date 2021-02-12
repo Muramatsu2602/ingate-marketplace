@@ -16,17 +16,6 @@ var storeControllers = {
   },
 
   /**
-   * deleting a card from shop pagea card after buying it
-   */
-  removeSoldCard: function (id) {
-    const index = id - 1;
-    // id starts at 1 and arrays... at 0
-    var el = App.elements.cards[index];
-    el.remove();
-    App.elements.cards[index] = {};
-  },
-
-  /**
    * read all cards from storeCards.js
    */
   renderAllCards: function () {
@@ -45,14 +34,19 @@ var storeControllers = {
       // console.log(`CARD[${i}]: `, card);
 
       // filtrar caso tenha algo no state.search
-      console.log("SEARCH:", card.name, search, card.name.search(search));
       if (card.name.toLowerCase().search(search) === -1) {
+        continue;
+      }
+
+      // filtering already-sold cards
+      if (App.controllers.ownCard(card)) {
         continue;
       }
 
       // creating card container
       var el = document.createElement("div");
       el.className = "card-container";
+      el.id = card.id;
 
       // card's image
       var img = document.createElement("img");
@@ -83,21 +77,22 @@ var storeControllers = {
       var btn = document.createElement("button");
       btn.className = "card-btn";
       btn.innerHTML = "Buy me!";
-      btn.onclick = function (event) {
-        // call modal to confirm purchase
+      el.onclick = function (event) {
         // https://www.w3schools.com/howto/howto_css_delete_modal.asp
-        // if (event.target == modal) {
-        //   modal.style.display = "none";
-        // }
-        this.removeSoldCard(card.id);
 
         alert("PURCHASE CONFIRMATION");
-        console.log(event.target);
+
+        var id = Math.floor(this.id);
+        var c = App.store.state.cards.find((x) => {
+          return x.id === id;
+        });
+
+        App.controllers.buyCard(c);
       };
 
       el.appendChild(btn);
 
-      console.log(el);
+      // console.log(el);
       App.elements.cards[card.id] = el;
       App.elements.allCardsContainer.appendChild(el);
     }
@@ -105,6 +100,33 @@ var storeControllers = {
     // if search return 0 results
     if (!App.elements.allCardsContainer.hasChildNodes()) {
       App.elements.allCardsContainer.innerHTML = `<div class="error-message"><span >No results for '${search}'</span><div>  <hr>`;
+    }
+  },
+
+  /**
+   * buying a card function
+   */
+  buyCard: function (card) {
+    console.log("comprei o card", card);
+
+    App.store.state.myCards.push(card);
+
+    App.controllers.renderAllCards();
+  },
+
+  /**
+   * auxiliary method to deal with cards moving from store to Inventory
+   * it filters already-sold cards
+   * @param {*} card
+   */
+  ownCard(card) {
+    var myCards = App.store.state.myCards;
+
+    for (let i = 0; i < myCards.length; i++) {
+      var myCard = myCards[i];
+      if (myCard.id === card.id) {
+        return true;
+      }
     }
   },
 };
