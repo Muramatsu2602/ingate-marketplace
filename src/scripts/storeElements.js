@@ -29,19 +29,23 @@ var storeElements = {
     var img = document.createElement("img");
     img.src = "img/website/atom.svg";
     img.className = "header-logo";
-    this.logoContainer.appendChild(img);
 
     // Inventory button
     this.inventoryContainer.className = "inventory-container";
+    this.inventoryContainer.innerHTML = "Inventory"
     var treasureImg = document.createElement("img");
     treasureImg.src = "img/website/treasure.svg";
-    this.inventoryContainer.appendChild(treasureImg);
+    this.inventoryContainer.onclick = function(e){
+      alert("You clicked on the inventory");
+      // TODO:
+      // - Search bar now searches within myCards
+      // - new title --> My Inventory
+    }
 
     // Title
     var title = document.createElement("a");
     title.href = "";
     title.innerHTML = "Super Trunfo: Scientist";
-    this.logoContainer.appendChild(title);
 
     // searchbar
     this.searchInput.placeholder = "pesquisar por nome...";
@@ -52,6 +56,9 @@ var storeElements = {
     };
 
     // adding children to header-container
+    this.logoContainer.appendChild(img);
+    this.logoContainer.appendChild(title);
+    this.inventoryContainer.appendChild(treasureImg);
     this.searchContainer.appendChild(this.searchInput);
     this.header.appendChild(this.logoContainer);
     this.header.appendChild(this.inventoryContainer);

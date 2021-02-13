@@ -25,6 +25,7 @@ var App = {
       search: "",
       cards: storeCards,
       myCards: [],
+      isStore: true, // depending on this bool, we change UI and display myCards
     },
   },
   controllers: storeControllers,
