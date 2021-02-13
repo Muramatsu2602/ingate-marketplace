@@ -166,7 +166,6 @@ var storeControllers = {
       var card = cards[i];
       // console.log(`CARD[${i}]: `, card);
       // rendering card on screen
-      App.controllers.renderStoreCardComponent(card);
 
       // filtrar caso tenha algo no state.search
       if (card.name.toLowerCase().search(search) === -1) {
@@ -176,6 +175,9 @@ var storeControllers = {
       if (App.controllers.ownCard(card)) {
         continue;
       }
+
+      //! Essa linha no seu código esta antes dos filtros
+      App.controllers.renderStoreCardComponent(card);
     }
 
     // iterating through all INVENTORY CARDS
