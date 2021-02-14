@@ -215,6 +215,11 @@ var storeControllers = {
   },
 
   /**
+   * once the user clicks on the inventory icon, this triggers
+   */
+  renderMyCards: function () {},
+
+  /**
    * buying a card function
    */
   buyCard: function (card) {
