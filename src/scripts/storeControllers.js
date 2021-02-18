@@ -127,16 +127,16 @@ var storeControllers = {
     var btn = document.createElement("button");
     btn.className = "card-btn";
     btn.innerHTML = "Sell me!";
-    // el.onclick = function (event) {
-    //   // https://www.w3schools.com/howto/howto_css_delete_modal.asp
-    //   alert("SOLD CARD CONFIRMATION");
-    //   var id = Math.floor(this.id);
-    //   var c = App.store.state.myCards.find((x) => {
-    //     return x.id === id;
-    //   });
+    el.onclick = function (event) {
+      // https://www.w3schools.com/howto/howto_css_delete_modal.asp
+      alert("SOLD CARD CONFIRMATION");
+      var id = Math.floor(this.id);
+      var c = App.store.state.myCards.find((x) => {
+        return x.id === id;
+      });
 
-    //   App.controllers.buyCard(c);
-    // };
+      App.controllers.sellCard(c);
+    };
 
     el.appendChild(btn);
 
@@ -227,6 +227,28 @@ var storeControllers = {
 
     App.store.state.myCards.push(card);
 
+    App.controllers.renderAllCards();
+  },
+
+  /**
+   * selling a card
+   * @param {*} card
+   */
+  sellCard: function (card) {
+    console.log("vendi o card", card);
+
+    var newMyCards = [];
+    // filtering the card we're selling
+    for (var i = 0; i < App.store.state.myCards.length; i++) {
+      var myCard = App.store.state.myCards[i];
+
+      if (myCard.id !== card.id) {
+        newMyCards.push(myCard);
+      }
+    }
+
+    // my cards now doesnt have that sold card
+    App.store.state.myCards = newMyCards;
     App.controllers.renderAllCards();
   },
 
