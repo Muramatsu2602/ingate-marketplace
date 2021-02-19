@@ -40,7 +40,14 @@
   --text-titan: 144px;
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
 body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  
   color: var(--color-text-title);
   background: var(--color-input-background);
 
@@ -182,6 +189,7 @@ button:focus {
 
 .body-container {
   width: 100vw;
+
   padding: 5rem;
 
   display: flex;
@@ -204,7 +212,7 @@ button:focus {
   justify-content: center;
   flex-wrap: wrap;
 
-  background-color: var(--color-primary-light);
+  /* background-color: var(--color-primary-light); */
 }
 
 .footer-container {

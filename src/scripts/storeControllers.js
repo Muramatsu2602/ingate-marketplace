@@ -161,39 +161,36 @@ var storeControllers = {
     App.elements.allCardsContainer.innerHTML = null;
     this.removeAllCards();
 
-    // iterating through all STORE CARDS
-    for (var i = 0; i < cards.length; i++) {
-      var card = cards[i];
-      // console.log(`CARD[${i}]: `, card);
-      // rendering card on screen
+    if (App.store.state.isStore) {
+      // iterating through all STORE CARDS
+      for (var i = 0; i < cards.length; i++) {
+        var card = cards[i];
+        // console.log(`CARD[${i}]: `, card);
+        // rendering card on screen
 
-      // filtrar caso tenha algo no state.search
-      if (card.name.toLowerCase().search(search) === -1) {
-        continue;
+        // filtrar caso tenha algo no state.search
+        if (card.name.toLowerCase().search(search) === -1) {
+          continue;
+        }
+        // filtering already-sold cards
+        if (App.controllers.ownCard(card)) {
+          continue;
+        }
+
+        //! Essa linha no seu código esta antes dos filtros
+        App.controllers.renderStoreCardComponent(card);
       }
-      // filtering already-sold cards
-      if (App.controllers.ownCard(card)) {
-        continue;
-      }
+    } else {
+      // iterating through all INVENTORY CARDS
+      for (var i = 0; i < myCards.length; i++) {
+        var card = myCards[i];
+        // rendering card on screen
+        App.controllers.renderInventoryCardComponent(card);
 
-      //! Essa linha no seu código esta antes dos filtros
-      App.controllers.renderStoreCardComponent(card);
-    }
-
-    // iterating through all INVENTORY CARDS
-    for (var i = 0; i < myCards.length; i++) {
-      var card = myCards[i];
-      // console.log(`CARD[${i}]: `, card);
-      // rendering card on screen
-      App.controllers.renderInventoryCardComponent(card);
-
-      // filtrar caso tenha algo no state.search
-      if (card.name.toLowerCase().search(search) === -1) {
-        continue;
-      }
-      // filtering already-sold cards
-      if (App.controllers.ownCard(card)) {
-        continue;
+        // filtrar caso tenha algo no state.search
+        if (card.name.toLowerCase().search(search) === -1) {
+          continue;
+        }
       }
     }
 
@@ -208,16 +205,27 @@ var storeControllers = {
     // if search return 0 results in My Cards
     if (
       !App.store.state.isStore &&
+      search !== "" &&
       !App.elements.myCardsContainer.hasChildNodes()
     ) {
-      App.elements.allCardsContainer.innerHTML = `<div class="error-message"><span >No results for '${search} in Inventory'</span><div>  <hr>`;
+      App.elements.myCardsContainer.innerHTML = `<div class="error-message"><span >No results for '${search} in Inventory'</span><div>  <hr>`;
+    }
+
+    // if either store or inventory are empty
+    if (
+      !App.elements.allCardsContainer.hasChildNodes() &&
+      App.store.state.isStore
+    ) {
+      App.elements.myCardsContainer.innerHTML = `<div class="error-message"><span >There's nothing to see here</span><div>  <hr>`;
+    }
+
+    if (
+      !App.elements.myCardsContainer.hasChildNodes() &&
+      !App.store.state.isStore
+    ) {
+      App.elements.myCardsContainer.innerHTML = `<div class="error-message"><span >There's nothing to see here</span><div>  <hr>`;
     }
   },
-
-  /**
-   * once the user clicks on the inventory icon, this triggers
-   */
-  renderMyCards: function () {},
 
   /**
    * buying a card function

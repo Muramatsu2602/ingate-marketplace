@@ -32,20 +32,25 @@ var storeElements = {
 
     // Inventory button
     this.inventoryContainer.className = "inventory-container";
-    this.inventoryContainer.innerHTML = "Inventory"
+    this.inventoryContainer.innerHTML = "Inventory";
     var treasureImg = document.createElement("img");
     treasureImg.src = "img/website/treasure.svg";
-    this.inventoryContainer.onclick = function(e){
+    this.inventoryContainer.onclick = function (e) {
       alert("You clicked on the inventory");
       // TODO:
-      // - Search bar now searches within myCards
-      // - new title --> My Inventory
-    }
+      App.store.state.isStore = false;
+      App.controllers.renderAllCards();
+    };
 
     // Title
     var title = document.createElement("a");
     title.href = "";
     title.innerHTML = "Super Trunfo: Scientist";
+    title.onclick = function (e) {
+      alert("you clicked on the logo!");
+      App.store.state.isStore = true;
+      App.controllers.renderAllCards();
+    };
 
     // searchbar
     this.searchInput.placeholder = "pesquisar por nome...";
@@ -66,7 +71,11 @@ var storeElements = {
   },
 
   createBody: function () {
-    this.body.innerHTML = "<h2>Welcome to our Store!</h2>";
+    if (App.store.state.isStore) {
+      this.body.innerHTML = "<h2>Welcome to our Store!</h2>";
+    } else {
+      this.body.innerHTML = "<h2> Welcome to your Inventory!</h2>";
+    }
     this.body.className = "body-container";
     this.app.appendChild(this.body);
 
@@ -80,7 +89,7 @@ var storeElements = {
   createFooter: function () {
     this.footer.innerHTML = "<p>Programmed with ♡ by @Muramatsu2602";
     this.footer.className = "footer-container";
-    this.app.appendChild(this.footer);
+    this.body.appendChild(this.footer);
   },
 
   createElements: function () {
