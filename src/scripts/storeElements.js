@@ -11,6 +11,7 @@ var storeElements = {
   searchContainer: document.createElement("div"),
   searchInput: document.createElement("input"),
   inventoryContainer: document.createElement("div"),
+  confirMmodal: document.createElement("div"),
 
   createApp: function () {
     // document contains the app
@@ -90,6 +91,10 @@ var storeElements = {
     this.footer.innerHTML = "<p>Programmed with ♡ by @Muramatsu2602";
     this.footer.className = "footer-container";
     this.body.appendChild(this.footer);
+  },
+
+  createConfirmModal: function () {
+    // use this -> https://www.w3schools.com/howto/howto_css_delete_modal.asp
   },
 
   createElements: function () {
