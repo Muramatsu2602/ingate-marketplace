@@ -194,7 +194,7 @@ var storeControllers = {
       }
     }
 
-    // if search return 0 results IN Store Cards
+    // if search return 0 results
     if (
       App.store.state.isStore &&
       !App.elements.allCardsContainer.hasChildNodes()
@@ -202,7 +202,6 @@ var storeControllers = {
       App.elements.allCardsContainer.innerHTML = `<div class="error-message"><span >No results for '${search} in the Store'</span><div>  <hr>`;
     }
 
-    // if search return 0 results in My Cards
     if (
       !App.store.state.isStore &&
       search !== "" &&
