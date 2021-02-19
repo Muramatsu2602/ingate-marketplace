@@ -45,11 +45,13 @@ var storeElements = {
 
     // Title
     var title = document.createElement("a");
-    title.href = "";
+    title.href = "#";
     title.innerHTML = "Super Trunfo: Scientist";
     title.onclick = function (e) {
       alert("you clicked on the logo!");
       App.store.state.isStore = true;
+      App.controllers.removeAllCards();
+      App.elements.myCardsContainer.innerHTML = null;
       App.controllers.renderAllCards();
     };
 

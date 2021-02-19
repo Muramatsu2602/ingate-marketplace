@@ -184,13 +184,14 @@ var storeControllers = {
       // iterating through all INVENTORY CARDS
       for (var i = 0; i < myCards.length; i++) {
         var card = myCards[i];
-        // rendering card on screen
-        App.controllers.renderInventoryCardComponent(card);
 
         // filtrar caso tenha algo no state.search
         if (card.name.toLowerCase().search(search) === -1) {
           continue;
         }
+
+        // rendering card on screen
+        App.controllers.renderInventoryCardComponent(card);
       }
     }
 

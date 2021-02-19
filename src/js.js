@@ -17,7 +17,6 @@ var App = {
 
     this.elements.createElements();
     this.controllers.renderAllCards();
-    // this.controllers.renderMyCards();
 
     console.log("Fim do APP");
   },
