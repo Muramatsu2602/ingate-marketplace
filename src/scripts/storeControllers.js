@@ -210,7 +210,6 @@ var storeControllers = {
     ) {
       App.elements.myCardsContainer.innerHTML = `<div class="error-message"><span >No results for '${search} in Inventory'</span><div>  <hr>`;
     }
-
     // if either store or inventory are empty
     if (
       !App.elements.allCardsContainer.hasChildNodes() &&

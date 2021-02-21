@@ -82,15 +82,6 @@ var storeCards = [
   },
   {
     id: 10,
-    name: "LEONHARD EULER",
-    life: "76",
-    attack: "53",
-    defence: "29",
-    price: 10.0,
-    url: "img/cards/leonhardEuler.jpg",
-  },
-  {
-    id: 10,
     name: "Leonhard Euler",
     life: "76",
     attack: "53",
@@ -187,5 +178,14 @@ var storeCards = [
     defence: "6",
     price: 12.0,
     url: "img/cards/galvani.jpg",
+  },
+  {
+    id: 21,
+    name: "Francis Bacon",
+    life: "69",
+    attack: "231",
+    defence: "5",
+    price: 34.0,
+    url: "img/cards/bacon.jpg",
   },
 ];
