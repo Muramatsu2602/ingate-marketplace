@@ -11,6 +11,7 @@ var storeElements = {
   searchContainer: document.createElement("div"),
   searchInput: document.createElement("input"),
   inventoryContainer: document.createElement("div"),
+  confirMmodal: document.createElement("div"),
 
   createApp: function () {
     // document contains the app
@@ -29,19 +30,30 @@ var storeElements = {
     var img = document.createElement("img");
     img.src = "img/website/atom.svg";
     img.className = "header-logo";
-    this.logoContainer.appendChild(img);
 
     // Inventory button
     this.inventoryContainer.className = "inventory-container";
+    this.inventoryContainer.innerHTML = "Inventory";
     var treasureImg = document.createElement("img");
     treasureImg.src = "img/website/treasure.svg";
-    this.inventoryContainer.appendChild(treasureImg);
+    this.inventoryContainer.onclick = function (e) {
+      alert("You clicked on the inventory");
+      // TODO:
+      App.store.state.isStore = false;
+      App.controllers.renderAllCards();
+    };
 
     // Title
     var title = document.createElement("a");
-    title.href = "";
+    title.href = "#";
     title.innerHTML = "Super Trunfo: Scientist";
-    this.logoContainer.appendChild(title);
+    title.onclick = function (e) {
+      alert("you clicked on the logo!");
+      App.store.state.isStore = true;
+      App.controllers.removeAllCards();
+      App.elements.myCardsContainer.innerHTML = null;
+      App.controllers.renderAllCards();
+    };
 
     // searchbar
     this.searchInput.placeholder = "pesquisar por nome...";
@@ -52,6 +64,9 @@ var storeElements = {
     };
 
     // adding children to header-container
+    this.logoContainer.appendChild(img);
+    this.logoContainer.appendChild(title);
+    this.inventoryContainer.appendChild(treasureImg);
     this.searchContainer.appendChild(this.searchInput);
     this.header.appendChild(this.logoContainer);
     this.header.appendChild(this.inventoryContainer);
@@ -59,7 +74,11 @@ var storeElements = {
   },
 
   createBody: function () {
-    this.body.innerHTML = "<h2>Welcome to our Store!</h2>";
+    if (App.store.state.isStore) {
+      this.body.innerHTML = "<h2>Welcome to our Store!</h2>";
+    } else {
+      this.body.innerHTML = "<h2> Welcome to your Inventory!</h2>";
+    }
     this.body.className = "body-container";
     this.app.appendChild(this.body);
 
@@ -73,7 +92,11 @@ var storeElements = {
   createFooter: function () {
     this.footer.innerHTML = "<p>Programmed with ♡ by @Muramatsu2602";
     this.footer.className = "footer-container";
-    this.app.appendChild(this.footer);
+    this.body.appendChild(this.footer);
+  },
+
+  createConfirmModal: function () {
+    // use this -> https://www.w3schools.com/howto/howto_css_delete_modal.asp
   },
 
   createElements: function () {

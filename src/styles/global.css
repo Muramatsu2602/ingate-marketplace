@@ -40,7 +40,14 @@
   --text-titan: 144px;
 }
 
+html {
+  height: -webkit-fill-available;
+}
+
 body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  
   color: var(--color-text-title);
   background: var(--color-input-background);
 
@@ -112,18 +119,20 @@ button:focus {
   width: 100vw;
   padding: 1rem;
 
+  padding-left: 1rem;
+  padding-right: 1rem;
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
 
   background-color: var(--color-primary-dark);
+  color: var(--color-white-background);
 }
 
 .logo-container {
   display: flex;
   flex-direction: row;
-  width: 30rem;
 
   align-items: center;
 }
@@ -158,20 +167,29 @@ button:focus {
   border-bottom: 3px dashed var(--color-primary-medium);
 }
 
-.inventory-container{
+.inventory-container {
+  cursor: pointer;
+
+  align-items: center;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  width: 10rem;
+  font-size: var(--text-big);
 }
 
-.inventory-container img{
+.inventory-container img {
   height: 2rem;
 }
 
-
+.inventory-container:hover {
+  text-decoration: underline;
+}
 
 .body-container {
   width: 100vw;
+
   padding: 5rem;
 
   display: flex;
@@ -189,12 +207,12 @@ button:focus {
   flex-wrap: wrap;
 }
 
-.my-cards-container{
+.my-cards-container {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
 
-  background-color: var(--color-primary-light);
+  /* background-color: var(--color-primary-light); */
 }
 
 .footer-container {
@@ -206,6 +224,7 @@ button:focus {
 
   background-color: var(--color-text-base);
   color: var(--color-box-base);
+  font-weight: 500;
 }
 
 .error-message {
