@@ -23,6 +23,15 @@
 }
 
 .card-container:hover {
+  animation: shake 0.9s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+
+  z-index: inherit;
+}
+
+.card-container:hover {
   border-color: var(--color-red);
 }
 
@@ -35,13 +44,6 @@
   width: 300px;
   object-fit: fill;
   border-radius: 8px;
-}
-
-.card-container img:hover {
-  animation: shake 0.9s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-  transform: translate3d(0, 0, 0);
-  backface-visibility: hidden;
-  perspective: 1000px;
 }
 
 @keyframes shake {
@@ -80,7 +82,7 @@
   transition: background-color 0.2s !important;
 }
 
-.card-btn-sell{
+.card-btn-sell {
   border-radius: 25px;
   margin-top: 1rem;
 
@@ -91,6 +93,10 @@
 
   cursor: pointer;
   transition: background-color 0.2s !important;
+}
+
+.card-btn-sell:hover {
+  background-color: var(--color-red-lighter);
 }
 
 .card-btn:hover {
