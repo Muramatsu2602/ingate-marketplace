@@ -125,7 +125,7 @@ var storeControllers = {
 
     // car's 'buy me' button
     var btn = document.createElement("button");
-    btn.className = "card-btn";
+    btn.className = "card-btn-sell";
     btn.innerHTML = "Sell me!";
     el.onclick = function (event) {
       // https://www.w3schools.com/howto/howto_css_delete_modal.asp
