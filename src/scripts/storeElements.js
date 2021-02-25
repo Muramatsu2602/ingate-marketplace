@@ -37,9 +37,9 @@ var storeElements = {
     var treasureImg = document.createElement("img");
     treasureImg.src = "img/website/treasure.svg";
     this.inventoryContainer.onclick = function (e) {
-      alert("You clicked on the inventory");
       // TODO:
       App.store.state.isStore = false;
+
       App.controllers.renderAllCards();
     };
 
@@ -48,7 +48,6 @@ var storeElements = {
     title.href = "#";
     title.innerHTML = "Super Trunfo: Scientist";
     title.onclick = function (e) {
-      alert("you clicked on the logo!");
       App.store.state.isStore = true;
       App.controllers.removeAllCards();
       App.elements.myCardsContainer.innerHTML = null;
@@ -73,12 +72,15 @@ var storeElements = {
     this.header.appendChild(this.searchContainer);
   },
 
-  createBody: function () {
+  changeTitle: function () {
     if (App.store.state.isStore) {
-      this.body.innerHTML = "<h2>Welcome to our Store!</h2>";
+      this.body.innerHTML = App.store.state.message1;
     } else {
-      this.body.innerHTML = "<h2> Welcome to your Inventory!</h2>";
+      this.body.innerHTML = App.store.state.message2;
     }
+  },
+
+  createBody: function () {
     this.body.className = "body-container";
     this.app.appendChild(this.body);
 
@@ -104,6 +106,7 @@ var storeElements = {
 
     this.createApp();
     this.createHeader();
+    // this.changeTitle();
     this.createBody();
     this.createFooter();
 

@@ -189,7 +189,6 @@ var storeControllers = {
         if (card.name.toLowerCase().search(search) === -1) {
           continue;
         }
-
         // rendering card on screen
         App.controllers.renderInventoryCardComponent(card);
       }
@@ -215,7 +214,7 @@ var storeControllers = {
       !App.elements.allCardsContainer.hasChildNodes() &&
       App.store.state.isStore
     ) {
-      App.elements.myCardsContainer.innerHTML = `<div class="error-message"><span >There's nothing to see here</span><div>  <hr>`;
+      App.elements.myCardsContainer.innerHTML = `<div class="error-message"><span >There's nothing to see here</span><div><hr>`;
     }
 
     if (

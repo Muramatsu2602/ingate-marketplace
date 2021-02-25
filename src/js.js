@@ -23,6 +23,8 @@ var App = {
   store: {
     state: {
       search: "",
+      message1:"<h2>Welcome to our Store!</h2>",
+      message2: "<h2> Welcome to your Inventory!</h2>", 
       cards: storeCards,
       myCards: [],
       isStore: true, // depending on this bool, we change UI and display myCards
